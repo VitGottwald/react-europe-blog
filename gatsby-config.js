@@ -6,11 +6,16 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Vit's Blog",
+    description: "This is my blog where I write about my neverending learning",
+    author: "Vit Gottwald",
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
+        name: `blog`,
         path: `${__dirname}/content/blog/`,
       },
     },

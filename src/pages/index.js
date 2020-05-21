@@ -1,23 +1,22 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Footer from "../components/footer"
 
-export const { query } = graphql`
-  query IndexQuery {
+export default ({ data }) => {
+  return (
+    <div>
+      Hello React Europe!
+      <Footer />
+    </div>
+  )
+}
+
+export const query = graphql`
+  {
     allSitePage {
-      edges {
-        node {
-          path
-        }
+      nodes {
+        path
       }
     }
   }
 `
-
-export default ({ data }) => {
-  return (
-    <>
-      <div>Hello world!</div>
-      <ul>{data.allSitePage.edges.map(edge => edge.node.path)}</ul>
-    </>
-  )
-}
